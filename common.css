@@ -1,0 +1,621 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600&display=swap');
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fbad24; 
+  }
+.fade {
+    opacity: 1;
+  }
+  .orange{
+    color: #fbad24;
+  }
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+}
+/* loading start */
+.loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    /*text-align:center;*/
+    /*animation:loading_animation 1s linear infinite;}*/
+}
+  
+.thumb {
+    animation: loading_animation 1s linear infinite;
+    color: #fbad24;
+    font-family: 'Courier New', Courier, monospace;
+  }
+.loader.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes loading_animation {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+@keyframes fadeOut {
+    100% {
+      visibility: hidden;
+      opacity: 0;
+    }
+}
+/* loading end*/
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#header{
+    background-image: url(images/demo-1.jpg);
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+}
+/*----nav----*/
+#navDiv{
+    display: flex;
+    padding: 0px 10px;
+    width: 100%;
+    font-size: large;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    height: 15%;
+    justify-content: space-around;
+    align-items: center;
+}
+#logo{
+    width: 40%;
+    padding-left: 2%;
+}
+#menu{
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#menu a {
+    position: relative;
+    color: white;
+    text-transform: capitalize;   
+}
+
+#menu a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.5s linear;
+}
+#menu a:hover::before{
+    width: 100%;
+    background-color: #fbad24;
+}
+/*---nav---*/
+
+#oneDiv{
+    height: calc(100% - 15%);
+    display: flex;
+    align-items: center;
+}
+#one {
+    color: white;
+    font-size: medium;
+    padding: 0px 6%;
+    
+}
+#oneA {
+    font-size: 600%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+}
+#oneA span {
+    color: #fbad24;
+}
+#oneA img {
+    
+    animation: slowLogo 2s forwards;
+    
+}
+@keyframes slowLogo {
+    0% { padding-right: 50px; }
+  100% { padding-right: 0px; }
+}
+#oneB{
+    opacity: 0;
+    font-size: xx-large;
+    animation: slowOP 3s forwards;
+    animation-delay: 1s;
+}
+#oneC {
+    background:rgba(0, 0, 0, 0.7);
+    width: fit-content;
+    padding: 20px 30px;
+    font-size: x-large;
+    margin-top: 20px;
+    font-weight: bold;
+    opacity: 0;
+    animation: slowOP 3s forwards;
+    animation-delay: 1.5s;
+}
+@keyframes slowOP {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+#oneC span {
+    color: #fbad24;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+}
+
+/*---book now---*/
+#bookDiv{
+    background-image: url(images/demo-2.jpg);
+    width: 100%;
+    height: 370px;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+#bookDiv h5 {
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: 600;
+}
+#bookDiv h2 {
+    font-size: 44px;
+    font-weight: 600;
+}
+#bookDiv a {
+    font-size: 18px;
+    padding: 15px 30px ;
+    background-color: rgba(255, 255, 255, 0.1);
+    letter-spacing: 2px;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+#bookDiv a:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+/*---book now---*/
+
+/*---packs---*/
+#packsDiv {
+    height: 600px;
+    background: #f3f3f3;
+    margin: 0;
+    padding: 20px 20px;
+}
+#packs {
+    height: 100%;
+    padding: 3.5% 3% 0% 4%;
+}
+#pdA p {
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 3.5px;
+    font-weight: 300;
+    font-size: 27px;
+    text-transform: uppercase;
+    margin: 0;
+}
+#pdA div{
+    float: right;
+}
+#pdA a{
+    background: #32435b;
+    border-radius: 50%;
+    padding: 9px 19px 11px 18px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+#pdA a:hover{
+    background: #e4e4e4;
+    color: #32435b;
+}
+#packsCon{
+    height: 90%;
+    overflow: hidden;
+}
+.mypack {
+    height: 90%;
+    margin-top: 3%;
+    display: flex;
+}
+.mpImg{
+    height: 65%;
+    width: 35%;
+    overflow: hidden;
+    /*border: 2px solid yellow;*/
+}
+.mpImg img {
+    width: 100%;
+}
+.mpImg img:hover {
+    transform: scale(1.1);
+    transition: all .5s;
+    
+}
+.mpCon{
+    height: 100%;
+    width: 65%;
+    /*border: 2px solid blue;*/
+    padding-left: 2%;
+    padding-top: 0.5%;
+}
+.mpHeading{
+    font-size: 40px;
+    margin-top: 0;
+    color: #32435b;
+    font-weight: 600;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: capitalize;
+
+}
+.mpIconsDiv{
+    float: left;
+    width: 100%;
+}
+.mpIcons{
+    float: left;
+    margin-right: 38px;
+    text-align: center;
+    min-width: 50px;
+    margin-bottom: 25px;
+    display: block;
+}
+.mpIcons img {
+    max-height: 26px;
+    max-width: 34px;
+    width: auto;
+}
+.mpIcons p {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #757575;
+    font-size: small;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.mpText p {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #757575;
+    font-weight: 400;
+    width: 100%;
+}
+.mpPrice{
+    text-align: right;
+    padding-right: 10px;
+}
+.mpText Span {
+    color: #fbad24;
+    text-transform: capitalize;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    font-size: x-large;
+    letter-spacing: 0.5px;
+}
+.mpText a {
+    margin-top: 27px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    background-color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    padding: 14px 24px;
+    
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    position: relative;
+  }
+  @keyframes fade {
+      from {left: 40%; opacity: .4}
+      to {left: 0%; opacity: 1}
+  }
+/*---packs---*/
+/*---gallery---*/
+#galleryDiv{
+    height: 1000px;
+}
+#galleryCont {
+    display: flex;
+    height: 30%;
+    padding: 0px 90px;
+}
+#galleryCont div {
+    margin-top: 5%;
+    width: 50%;
+}
+#galleryCont h5 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 30px 0px 23px 0px;
+    letter-spacing: 2px;
+    color: #fbad24;
+}
+#galleryCont h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 44px;
+}
+#galleryImgDiv{
+    height: 65%;
+    display: flex;
+}
+.item {
+    height: 650px;
+    background-size: cover;
+    background-position: center;
+}
+/*---gallery---*/
+
+/*---address---*/
+#addressDiv{
+    background-image: url(images/road.jpg);
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+#dark {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+}
+#address{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+}
+#addressDiv img {
+    height: 50px;
+    width: 50px;
+}
+#adCont{
+    width: 100%;
+    height: 100%;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+    color: white;
+}
+#addresButton {
+    font-weight: bold;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#addresButton div {
+    background:rgba(0, 0, 0, 0.3);
+    padding: 1px 13px 1px 1px;
+    width:fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#adCont h5 {
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fbad24;
+}
+#adCont h3{
+    font-size: 20px;
+}
+#adCont h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+#adCont a {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+/*---address---*/
+
+/*---followUs*/
+#followUs{
+    width: 100%;
+    height: fit-content;
+   
+}
+#instaLogo{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0px 90px;
+}
+#instaLogo img {
+    height: 60px;
+    width: 60px;
+}
+#instaLogo h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 30px 0px 23px 0px;
+    letter-spacing: 2px;
+}
+#instaImgDiv{
+    padding: 20px 0px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+  
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 33%;
+    max-width: 33%;
+    padding: 0 3px;
+}
+  
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+  
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+}
+  
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+}
+
+.container {
+    position: relative;
+  }
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000009;    
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  }
+  
+  .container:hover .overlay {
+    height: calc(100% - 8px);
+  }
+  
+  .text {
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+/*---followUs*/
+
+/*---follow*/
+#follow{
+    width: 100%;
+    position: relative;
+    height: 600px;
+    display: none;
+}
+#f2{
+    overflow:scroll;
+    height: 100%;
+}
+#f2::-webkit-scrollbar {
+    display: none;
+}
+.bg-image {
+    /* Full height */
+    height: 50%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  /* Position text in the middle of the page/image */
+  .bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 400px;
+    padding: 20px ;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .bg-text a {
+      text-decoration: none;
+      color: white;
+  }
+/*---follow*/
+
+#two{
+    height: 500px;
+    color: white;
+}
